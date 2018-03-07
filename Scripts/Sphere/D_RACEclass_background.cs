@@ -22,7 +22,7 @@ namespace Server.Items.UOErebor
 
         public override void OnResponse(NetState sender, RelayInfo info)
         {
-            SphereSharpRuntime.RunDialogEvent("D_RACEclass_background", sender, info);
+            SphereSharpRuntime.RunDialogTrigger("D_RACEclass_background", sender, info);
         }
     }
 }
