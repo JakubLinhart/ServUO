@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{308EA7C6-2873-4E47-AF3F-ABBA3F8AB63E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AssemblyName>Scripts.CS</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -38,6 +38,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
@@ -10067,10 +10070,19 @@
     <Compile Include="Services\ViceVsVirtue\ViceVsVirtueSystem.cs" />
     <Compile Include="Services\ViceVsVirtue\VvVBattle.cs" />
     <Compile Include="Services\ViceVsVirtue\VvVRewards.cs" />
-    <Compile Include="Services\Virtues\Honesty.cs" />
-    <Compile Include="Services\Virtues\Humility.cs" />
     <Compile Include="Services\Virtue Artifacts\VirtueArtifactsSystem.cs" />
+    <Compile Include="Services\Virtues\Compassion.cs" />
+    <Compile Include="Services\Virtues\Honesty.cs" />
+    <Compile Include="Services\Virtues\Honor.cs" />
+    <Compile Include="Services\Virtues\Humility.cs" />
+    <Compile Include="Services\Virtues\Justice.cs" />
+    <Compile Include="Services\Virtues\Sacrifice.cs" />
     <Compile Include="Services\Virtues\Spirituality.cs" />
+    <Compile Include="Services\Virtues\Valor.cs" />
+    <Compile Include="Services\Virtues\VirtueGump.cs" />
+    <Compile Include="Services\Virtues\VirtueHelper.cs" />
+    <Compile Include="Services\Virtues\VirtueInfoGump.cs" />
+    <Compile Include="Services\Virtues\VirtueStatusGump.cs" />
     <Compile Include="Skills\Fishing.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -11017,33 +11029,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\VeteranRewards\RewardSystem.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\Compassion.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\Honor.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\Justice.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\Sacrifice.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\Valor.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\VirtueGump.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\VirtueHelper.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\VirtueInfoGump.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Services\Virtues\VirtueStatusGump.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\XmlSpawner\XmlSpawner Core\BaseXmlSpawner.cs">
@@ -12316,6 +12301,13 @@
     <Compile Include="Spells\UnsummonTimer.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Sphere\D_RACEclass_background.cs" />
+    <Compile Include="Sphere\D_RACEclass_classes.cs" />
+    <Compile Include="Sphere\D_RACEclass_info.cs" />
+    <Compile Include="Sphere\i_grave_stone_4.cs" />
+    <Compile Include="Sphere\i_moongate_blue.cs" />
+    <Compile Include="Sphere\I_stone_raceclass.cs" />
+    <Compile Include="Sphere\SphereSharpInitializer.cs" />
     <Compile Include="Targets\BladedItemTarget.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -12421,6 +12413,14 @@
     <Compile Include="VendorInfo\VendorInventory.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SphereSharp.ServUO\SphereSharp.ServUO.csproj">
+      <Project>{af23fa4c-1b35-4ad5-bf7d-5cefa25d6c48}</Project>
+      <Name>SphereSharp.ServUO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SphereSharp\SphereSharp.csproj">
+      <Project>{d3ffda1d-ae4e-4a33-b70f-a0fbf55d1156}</Project>
+      <Name>SphereSharp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Server\Server.csproj">
       <Project>{AE4A9EAA-E0EB-4DC9-9604-BE4289F9F6C3}</Project>
       <Name>Server</Name>
@@ -12431,6 +12431,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Services\XmlSpawner\XMLSpawner Extras\XmlQuestNPC\Abbott.npc" />
     <None Include="Services\XmlSpawner\XMLSpawner Extras\XmlQuestNPC\Costello.npc" />
     <None Include="Services\XmlSpawner\XMLSpawner Extras\XmlQuestNPC\Dracondar.npc" />

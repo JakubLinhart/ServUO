@@ -32,3 +32,9 @@ reportHistory.xml
 drng64.dll
 drng32.dll
 libdrng.so
+/*.dll
+/*.pdb
+/Scripts/packages.config
+/ServUO.exe.config
+/Server/app.config
+/System.Collections.Immutable.xml
