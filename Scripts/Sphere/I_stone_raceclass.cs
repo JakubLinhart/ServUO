@@ -1,11 +1,11 @@
-using Server.Sphere;
-using SphereSharp.ServUO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Server.Network;
+using SphereSharp.ServUO;
 
-namespace Server.Items.UOErebor
+namespace Server.Sphere.UOErebor
 {
     public class I_stone_raceclass : i_grave_stone_4
     {
@@ -31,7 +31,7 @@ namespace Server.Items.UOErebor
             int version = reader.ReadInt();
         }
 
-        public override void OnItemUsed(Mobile from, Item item)
+		public override void OnItemUsed(Mobile from, Item item)
         {
             SphereSharpRuntime.RunItemEvent(from, item, "I_stone_raceclass", "userdclick");
         }

@@ -12304,6 +12304,7 @@
     <Compile Include="Sphere\D_RACEclass_background.cs" />
     <Compile Include="Sphere\D_RACEclass_classes.cs" />
     <Compile Include="Sphere\D_RACEclass_info.cs" />
+    <Compile Include="Sphere\D_RACEclass_races.cs" />
     <Compile Include="Sphere\i_grave_stone_4.cs" />
     <Compile Include="Sphere\i_moongate_blue.cs" />
     <Compile Include="Sphere\I_stone_raceclass.cs" />

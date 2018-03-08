@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SphereSharp.ServUO;
 
-namespace Server.Items.UOErebor
+namespace Server.Sphere.UOErebor
 {
     public class i_grave_stone_4 : Item
     {
@@ -27,6 +28,11 @@ namespace Server.Items.UOErebor
         {
             base.Deserialize(reader);
             int version = reader.ReadInt();
+        }
+
+		public override void OnItemUsed(Mobile from, Item item)
+        {
+            SphereSharpRuntime.RunItemEvent(from, item, "i_grave_stone_4", "userdclick");
         }
     }
 }

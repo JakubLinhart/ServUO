@@ -1,19 +1,19 @@
-using Server.Gumps;
-using Server.Network;
-using Server.Sphere;
-using SphereSharp.ServUO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Server.Gumps;
+using Server.Network;
+using Server.Sphere;
+using SphereSharp.ServUO;
 
-namespace Server.Items.UOErebor
+namespace Server.Sphere.UOErebor
 {
     public class D_RACEclass_classes : Gump
     {
-        public static void Initialize()
+		public static void Initialize()
         {
-            SphereSharpRuntime.RegisterGump<D_RACEclass_classes>("D_RACEclass_classes");
+			SphereSharpRuntime.RegisterGump<D_RACEclass_classes>("D_RACEclass_classes");
         }
 
         public D_RACEclass_classes() : base(0, 0)
