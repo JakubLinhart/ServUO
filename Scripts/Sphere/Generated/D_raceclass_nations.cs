@@ -9,20 +9,20 @@ using SphereSharp.ServUO;
 
 namespace Server.Sphere.UOErebor
 {
-    public class D_RACEclass_races : Gump
+    public class D_raceclass_nations : Gump
     {
 		public static void Initialize()
         {
-			SphereSharpRuntime.RegisterGump<D_RACEclass_races>("D_RACEclass_races");
+			SphereSharpRuntime.Current.RegisterGump<D_raceclass_nations>("D_raceclass_nations");
         }
 
-        public D_RACEclass_races() : base(0, 0)
+        public D_raceclass_nations() : base(0, 0)
         {
         }
 
         public override void OnResponse(NetState sender, RelayInfo info)
         {
-            SphereSharpRuntime.RunDialogTrigger("D_RACEclass_races", sender, info);
+            SphereSharpRuntime.Current.RunDialogTrigger("D_raceclass_nations", this, sender, info);
         }
     }
 }

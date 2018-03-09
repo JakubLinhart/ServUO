@@ -2,19 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Server.Network;
 using SphereSharp.ServUO;
 
 namespace Server.Sphere.UOErebor
 {
-    public class i_moongate_blue : Item
+    public class I_stone_raceclass : i_grave_stone_4
     {
         [Constructable]
-        public i_moongate_blue() : base(0x0F6C)
+        public I_stone_raceclass() : base("I_stone_raceclass")
+        {
+        }
+
+		protected I_stone_raceclass(string defName) : base(defName)
         {
         }
 
         [Constructable]
-        public i_moongate_blue(Serial serial) : base(serial)
+        public I_stone_raceclass(Serial serial) : base(serial)
         {
         }
 
@@ -32,7 +37,7 @@ namespace Server.Sphere.UOErebor
 
 		public override void OnItemUsed(Mobile from, Item item)
         {
-            SphereSharpRuntime.RunItemEvent(from, item, "i_moongate_blue", "userdclick");
+            SphereSharpRuntime.Current.RunItemEvent(from, item, "I_stone_raceclass", "userdclick");
         }
     }
 }

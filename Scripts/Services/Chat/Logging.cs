@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Collections.Generic;
 
@@ -50,6 +50,9 @@ namespace Server.Engines.Chat
 
             try
             {
+                if (m_Output == null)
+                    return;
+
                 m_Output.WriteLine("{0}: [{1}] {2}", DateTime.UtcNow, channel, text);
 
                 StreamWriter channelOutput;

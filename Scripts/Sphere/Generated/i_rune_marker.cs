@@ -2,20 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Server.Network;
 using SphereSharp.ServUO;
 
 namespace Server.Sphere.UOErebor
 {
-    public class I_stone_raceclass : i_grave_stone_4
+    public class i_rune_marker : SphereItem
     {
         [Constructable]
-        public I_stone_raceclass()
+        public i_rune_marker() : base(0x1F14, "i_rune_marker")
+        {
+        }
+		
+		protected i_rune_marker(string defName) : base(0x1F14, defName)
         {
         }
 
         [Constructable]
-        public I_stone_raceclass(Serial serial) : base(serial)
+        public i_rune_marker(Serial serial) : base(serial)
         {
         }
 
@@ -33,7 +36,7 @@ namespace Server.Sphere.UOErebor
 
 		public override void OnItemUsed(Mobile from, Item item)
         {
-            SphereSharpRuntime.RunItemEvent(from, item, "I_stone_raceclass", "userdclick");
+            SphereSharpRuntime.Current.RunItemEvent(from, item, "i_rune_marker", "userdclick");
         }
     }
 }

@@ -344,7 +344,7 @@ namespace Server.Items
         public static void Initialize()
 		{
 			EventSink.OpenSpellbookRequest += EventSink_OpenSpellbookRequest;
-			EventSink.CastSpellRequest += EventSink_CastSpellRequest;
+			//EventSink.CastSpellRequest += EventSink_CastSpellRequest;
             EventSink.TargetedSpell += Targeted_Spell;       
 
 			CommandSystem.Register("AllSpells", AccessLevel.GameMaster, AllSpells_OnCommand);

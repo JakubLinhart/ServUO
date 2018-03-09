@@ -2,19 +2,24 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Server.Network;
 using SphereSharp.ServUO;
 
 namespace Server.Sphere.UOErebor
 {
-    public class i_grave_stone_4 : Item
+    public class I_stone_reseting : i_grave_stone_4
     {
         [Constructable]
-        public i_grave_stone_4() : base(0x0EDB)
+        public I_stone_reseting() : base("I_stone_reseting")
+        {
+        }
+
+		protected I_stone_reseting(string defName) : base(defName)
         {
         }
 
         [Constructable]
-        public i_grave_stone_4(Serial serial) : base(serial)
+        public I_stone_reseting(Serial serial) : base(serial)
         {
         }
 
@@ -32,7 +37,7 @@ namespace Server.Sphere.UOErebor
 
 		public override void OnItemUsed(Mobile from, Item item)
         {
-            SphereSharpRuntime.RunItemEvent(from, item, "i_grave_stone_4", "userdclick");
+            SphereSharpRuntime.Current.RunItemEvent(from, item, "I_stone_reseting", "userdclick");
         }
     }
 }

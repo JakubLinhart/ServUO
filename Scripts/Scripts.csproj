@@ -20,6 +20,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>5</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -12301,13 +12302,22 @@
     <Compile Include="Spells\UnsummonTimer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Sphere\D_RACEclass_background.cs" />
-    <Compile Include="Sphere\D_RACEclass_classes.cs" />
-    <Compile Include="Sphere\D_RACEclass_info.cs" />
-    <Compile Include="Sphere\D_RACEclass_races.cs" />
-    <Compile Include="Sphere\i_grave_stone_4.cs" />
-    <Compile Include="Sphere\i_moongate_blue.cs" />
-    <Compile Include="Sphere\I_stone_raceclass.cs" />
+    <Compile Include="Sphere\Generated\c_mummy.cs" />
+    <Compile Include="Sphere\Generated\c_zombie.cs" />
+    <Compile Include="Sphere\Generated\D_RACEclass_background.cs" />
+    <Compile Include="Sphere\Generated\D_RACEclass_classes.cs" />
+    <Compile Include="Sphere\Generated\D_RACEclass_info.cs" />
+    <Compile Include="Sphere\Generated\D_raceclass_nations.cs" />
+    <Compile Include="Sphere\Generated\D_RACEclass_races.cs" />
+    <Compile Include="Sphere\Generated\D_RACEclass_stats.cs" />
+    <Compile Include="Sphere\Generated\i_grave_stone_4.cs" />
+    <Compile Include="Sphere\Generated\i_moongate_blue.cs" />
+    <Compile Include="Sphere\Generated\i_rune_base.cs" />
+    <Compile Include="Sphere\Generated\i_rune_marker.cs" />
+    <Compile Include="Sphere\Generated\I_stone_raceclass.cs" />
+    <Compile Include="Sphere\Generated\I_stone_reseting.cs" />
+    <Compile Include="Sphere\SphereCreature.cs" />
+    <Compile Include="Sphere\SphereItem.cs" />
     <Compile Include="Sphere\SphereSharpInitializer.cs" />
     <Compile Include="Targets\BladedItemTarget.cs">
       <SubType>Code</SubType>
@@ -12419,7 +12429,7 @@
       <Name>SphereSharp.ServUO</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\SphereSharp\SphereSharp.csproj">
-      <Project>{d3ffda1d-ae4e-4a33-b70f-a0fbf55d1156}</Project>
+      <Project>{d4f2d751-fa5e-4398-8924-57ebd80e318f}</Project>
       <Name>SphereSharp</Name>
     </ProjectReference>
     <ProjectReference Include="..\Server\Server.csproj">

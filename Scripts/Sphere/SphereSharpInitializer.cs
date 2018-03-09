@@ -1,3 +1,4 @@
+using Server.Commands;
 using SphereSharp.ServUO;
 using System;
 using System.Collections.Generic;
@@ -9,11 +10,18 @@ namespace Server.Sphere
 {
     public static class SphereSharpInitializer
     {
+        [CallPriority(-100)]
         public static void Initialize()
         {
-            Console.WriteLine("Initializing SphereSharp runtime");
+            SphereSharpRuntime.Current = new SphereSharpRuntime();
+            CommandSystem.Register("reload", AccessLevel.Administrator, new CommandEventHandler(ReloadScripts));
+            EventSink.CastSpellRequest += SphereSharpRuntime.Current.HandleCastSpellRequest;
+            EventSink.ItemCreated += SphereSharpRuntime.Current.HandleItemCreated;
+        }
 
-            SphereSharpRuntime.Initialize();
+        private static void ReloadScripts(CommandEventArgs e)
+        {
+            SphereSharpRuntime.Current = new SphereSharpRuntime();
         }
     }
 }
