@@ -1859,5 +1859,28 @@ namespace Server
             TargetedSkill = null;
             TargetedItemUse = null;
         }
-	}
+
+        internal static void InvokeSkillRequest(Mobile source, int skillIndex)
+        {
+            var handler = SkillRequested;
+            if (handler != null)
+            {
+                handler.Invoke(null, new SkillRequestedArgs(source, skillIndex));
+            }
+        }
+
+        public static event EventHandler<SkillRequestedArgs> SkillRequested;
+    }
+
+    public class SkillRequestedArgs
+    {
+        public Mobile Source { get; }
+        public int SkillId { get;  }
+
+        public SkillRequestedArgs(Mobile source, int skillId)
+        {
+            Source = source;
+            SkillId = skillId;
+        }
+    }
 }

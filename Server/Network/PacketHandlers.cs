@@ -859,7 +859,8 @@ namespace Server.Network
 							break;
 						}
 
-						Skills.UseSkill(m, skillIndex);
+                        EventSink.InvokeSkillRequest(m, skillIndex);
+//						Skills.UseSkill(m, skillIndex);
 
 						break;
 					}

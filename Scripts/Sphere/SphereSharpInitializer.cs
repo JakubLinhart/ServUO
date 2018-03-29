@@ -16,6 +16,7 @@ namespace Server.Sphere
             SphereSharpRuntime.Current = new SphereSharpRuntime();
             CommandSystem.Register("reload", AccessLevel.Administrator, new CommandEventHandler(ReloadScripts));
             EventSink.CastSpellRequest += SphereSharpRuntime.Current.HandleCastSpellRequest;
+            EventSink.SkillRequested += SphereSharpRuntime.Current.HandleSkillRequest;
             EventSink.ItemCreated += SphereSharpRuntime.Current.HandleItemCreated;
         }
 
