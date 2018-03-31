@@ -18,6 +18,7 @@ namespace Server.Sphere
             EventSink.CastSpellRequest += SphereSharpRuntime.Current.HandleCastSpellRequest;
             EventSink.SkillRequested += SphereSharpRuntime.Current.HandleSkillRequest;
             EventSink.ItemCreated += SphereSharpRuntime.Current.HandleItemCreated;
+            EventSink.MobileLocationChanged += SphereSharpRuntime.Current.HandleMobileLocationChanged;
         }
 
         private static void ReloadScripts(CommandEventArgs e)

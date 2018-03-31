@@ -26,7 +26,7 @@ namespace Server.Sphere
         public SphereItem(int itemId, string defName) : base(itemId)
         {
             Def = SphereSharpRuntime.Current.CodeModel.GetItemDef(defName);
-            triggerHolder = new StandardTriggerHolder(Def.Triggers.Values,
+            triggerHolder = new StandardTriggerHolder(name => Def.Triggers[name],
                 SphereSharpRuntime.Current.RunCodeBlock);
         }
 
@@ -47,7 +47,7 @@ namespace Server.Sphere
 
         public string Run(string triggerName, EvaluationContext context)
         {
-            return triggerHolder.Run(triggerName, context);
+            return triggerHolder.RunTrigger(triggerName, context);
         }
     }
 }

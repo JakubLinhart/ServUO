@@ -37,7 +37,7 @@ namespace Server.Sphere
             : base(ai, mode, iRangePerception, iRangeFight, dActiveSpeed, dPassiveSpeed)
         {
             Def = SphereSharpRuntime.Current.GetCharDef(defName);
-            triggerHolder = new StandardTriggerHolder(Def.Triggers.Values, SphereSharpRuntime.Current.RunCodeBlock);
+            triggerHolder = new StandardTriggerHolder(name => Def.Triggers[name], SphereSharpRuntime.Current.RunCodeBlock);
         }
 
         protected void OnCreated()
@@ -45,7 +45,7 @@ namespace Server.Sphere
             var context = new EvaluationContext();
             context.Default = this;
             context.Src = this;
-            Run("create", context);
+            RunTrigger("create", context);
         }
 
         public SphereCreature(Serial serial) : base(serial)
@@ -67,9 +67,19 @@ namespace Server.Sphere
             return tagHolder.Tag(key);
         }
 
-        public string Run(string triggerName, EvaluationContext context)
+        public void SubscribeEvents(EventsDef eventsDef)
         {
-            return triggerHolder.Run(triggerName, context);
+            triggerHolder.SubscribeEvents(eventsDef);
+        }
+
+        public void UnsubscribeEvents(EventsDef eventsDef)
+        {
+            triggerHolder.UnsubscribeEvents(eventsDef);
+        }
+
+        public string RunTrigger(string triggerName, EvaluationContext context)
+        {
+            return triggerHolder.RunTrigger(triggerName, context);
         }
     }
 }

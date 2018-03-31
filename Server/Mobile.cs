@@ -9832,9 +9832,9 @@ namespace Server
 			SendIncomingPacket();
 
 			OnMapChange(oldMap);
-			OnLocationChange(oldLocation);
+            OnLocationChange(oldLocation);
 
-			if (m_Region != null)
+            if (m_Region != null)
 			{
 				m_Region.OnLocationChanged(this, oldLocation);
 			}
@@ -10067,8 +10067,11 @@ namespace Server
 				OnLocationChange(oldLocation);
 
 				Region.OnLocationChanged(this, oldLocation);
-			}
-		}
+
+                // @step trigger runs always when location changed, regardless player is teleported
+                EventSink.InvokeMobileLocationChanged(this);
+            }
+        }
 
 		/// <summary>
 		///     Overridable. Virtual event invoked when <see cref="Location" /> changes.

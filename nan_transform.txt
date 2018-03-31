@@ -1543,3 +1543,4 @@ NaN in TransformMoveDelay: 28.03.2018 20:00:59, Server.Mobiles.MeleeAI, Server.S
 NaN in TransformMoveDelay: 28.03.2018 20:01:00, Server.Mobiles.MeleeAI, Server.Sphere.UOErebor.c_zombie, 0
 NaN in TransformMoveDelay: 28.03.2018 20:01:01, Server.Mobiles.MeleeAI, Server.Sphere.UOErebor.c_zombie, 0
 NaN in TransformMoveDelay: 28.03.2018 20:01:02, Server.Mobiles.MeleeAI, Server.Sphere.UOErebor.c_zombie, 0
+NaN in TransformMoveDelay: 31.03.2018 12:03:40, Server.Mobiles.MeleeAI, Server.Sphere.UOErebor.c_zombie, 0
