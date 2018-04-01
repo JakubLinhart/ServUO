@@ -26,6 +26,24 @@ namespace Server.Sphere
         public override int StamMax { get { return MaxStam; } }
         public override int ManaMax { get { return MaxMana; } }
 
+        public int Action
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public void Skill(int skill)
+        {
+            throw new NotImplementedException();
+        }
+
+
         public int Parrying { get { return this.Skills[SkillName.Parry].Fixed; } set { this.Skills[SkillName.Parry].Base = value; } }
         public int Tactics { get { return this.Skills[SkillName.Tactics].Fixed; } set { this.Skills[SkillName.Tactics].Base = value; } }
         public int Wrestling { get { return this.Skills[SkillName.Wrestling].Fixed; } set { this.Skills[SkillName.Wrestling].Base = value; } }
@@ -69,17 +87,22 @@ namespace Server.Sphere
 
         public void SubscribeEvents(EventsDef eventsDef)
         {
-            triggerHolder.SubscribeEvents(eventsDef);
+            if (triggerHolder != null)
+                triggerHolder.SubscribeEvents(eventsDef);
         }
 
         public void UnsubscribeEvents(EventsDef eventsDef)
         {
-            triggerHolder.UnsubscribeEvents(eventsDef);
+            if (triggerHolder != null)
+                triggerHolder.UnsubscribeEvents(eventsDef);
         }
 
         public string RunTrigger(string triggerName, EvaluationContext context)
         {
-            return triggerHolder.RunTrigger(triggerName, context);
+            if (triggerHolder != null)
+                return triggerHolder.RunTrigger(triggerName, context);
+
+            return string.Empty;
         }
     }
 }
