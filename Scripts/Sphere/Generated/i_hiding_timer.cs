@@ -7,24 +7,24 @@ using SphereSharp.ServUO;
 
 namespace Server.Sphere.UOErebor
 {
-    public class I_stone_raceclass : i_grave_stone_4
+    public class i_hiding_timer : i_memory
     {
 	    public new static void Initialize()
         {
-            SphereSharpRuntime.Current.RegisterServUOType<I_stone_raceclass>("I_stone_raceclass");
+            SphereSharpRuntime.Current.RegisterServUOType<i_hiding_timer>("i_hiding_timer");
         }
 
         [Constructable]
-        public I_stone_raceclass() : base("I_stone_raceclass")
+        public i_hiding_timer() : base("i_hiding_timer")
         {
         }
 
-		protected I_stone_raceclass(string defName) : base(defName)
+		protected i_hiding_timer(string defName) : base(defName)
         {
         }
 
         [Constructable]
-        public I_stone_raceclass(Serial serial) : base(serial)
+        public i_hiding_timer(Serial serial) : base(serial)
         {
         }
 
@@ -42,7 +42,7 @@ namespace Server.Sphere.UOErebor
 
 		public override void OnItemUsed(Mobile from, Item item)
         {
-            SphereSharpRuntime.Current.RunItemEvent(from, item, "I_stone_raceclass", "userdclick");
+            SphereSharpRuntime.Current.RunItemEvent(from, item, "i_hiding_timer", "userdclick");
         }
     }
 }

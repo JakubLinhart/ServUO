@@ -8,6 +8,11 @@ namespace Server.Sphere.UOErebor
 {
     public class i_rune_marker : SphereItem
     {
+	    public static void Initialize()
+        {
+            SphereSharpRuntime.Current.RegisterServUOType<i_rune_marker>("i_rune_marker");
+        }
+
         [Constructable]
         public i_rune_marker() : base(0x1F14, "i_rune_marker")
         {

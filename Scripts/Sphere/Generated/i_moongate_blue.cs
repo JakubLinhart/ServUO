@@ -8,6 +8,11 @@ namespace Server.Sphere.UOErebor
 {
     public class i_moongate_blue : SphereItem
     {
+	    public static void Initialize()
+        {
+            SphereSharpRuntime.Current.RegisterServUOType<i_moongate_blue>("i_moongate_blue");
+        }
+
         [Constructable]
         public i_moongate_blue() : base(0x0F6C, "i_moongate_blue")
         {

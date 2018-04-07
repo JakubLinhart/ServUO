@@ -9,6 +9,11 @@ namespace Server.Sphere.UOErebor
 {
     public class i_rune_base : i_rune_marker
     {
+	    public new static void Initialize()
+        {
+            SphereSharpRuntime.Current.RegisterServUOType<i_rune_base>("i_rune_base");
+        }
+
         [Constructable]
         public i_rune_base() : base("i_rune_base")
         {

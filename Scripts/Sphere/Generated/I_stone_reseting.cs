@@ -9,6 +9,11 @@ namespace Server.Sphere.UOErebor
 {
     public class I_stone_reseting : i_grave_stone_4
     {
+	    public new static void Initialize()
+        {
+            SphereSharpRuntime.Current.RegisterServUOType<I_stone_reseting>("I_stone_reseting");
+        }
+
         [Constructable]
         public I_stone_reseting() : base("I_stone_reseting")
         {

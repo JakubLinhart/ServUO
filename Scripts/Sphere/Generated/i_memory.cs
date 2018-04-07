@@ -2,29 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Server.Network;
 using SphereSharp.ServUO;
 
 namespace Server.Sphere.UOErebor
 {
-    public class I_stone_raceclass : i_grave_stone_4
+    public class i_memory : SphereItem
     {
-	    public new static void Initialize()
+	    public static void Initialize()
         {
-            SphereSharpRuntime.Current.RegisterServUOType<I_stone_raceclass>("I_stone_raceclass");
+            SphereSharpRuntime.Current.RegisterServUOType<i_memory>("i_memory");
         }
 
         [Constructable]
-        public I_stone_raceclass() : base("I_stone_raceclass")
+        public i_memory() : base(0x2007, "i_memory")
         {
         }
-
-		protected I_stone_raceclass(string defName) : base(defName)
+		
+		protected i_memory(string defName) : base(0x2007, defName)
         {
         }
 
         [Constructable]
-        public I_stone_raceclass(Serial serial) : base(serial)
+        public i_memory(Serial serial) : base(serial)
         {
         }
 
@@ -42,7 +41,7 @@ namespace Server.Sphere.UOErebor
 
 		public override void OnItemUsed(Mobile from, Item item)
         {
-            SphereSharpRuntime.Current.RunItemEvent(from, item, "I_stone_raceclass", "userdclick");
+            SphereSharpRuntime.Current.RunItemEvent(from, item, "i_memory", "userdclick");
         }
     }
 }

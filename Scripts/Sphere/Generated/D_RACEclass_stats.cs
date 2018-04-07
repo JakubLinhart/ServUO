@@ -13,7 +13,7 @@ namespace Server.Sphere.UOErebor
     {
 		public static void Initialize()
         {
-			SphereSharpRuntime.Current.RegisterGump<D_RACEclass_stats>("D_RACEclass_stats");
+			SphereSharpRuntime.Current.RegisterServUOType<D_RACEclass_stats>("D_RACEclass_stats");
         }
 
         public D_RACEclass_stats() : base(0, 0)

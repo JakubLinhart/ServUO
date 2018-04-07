@@ -12311,6 +12311,8 @@
     <Compile Include="Sphere\Generated\D_RACEclass_races.cs" />
     <Compile Include="Sphere\Generated\D_RACEclass_stats.cs" />
     <Compile Include="Sphere\Generated\i_grave_stone_4.cs" />
+    <Compile Include="Sphere\Generated\i_hiding_timer.cs" />
+    <Compile Include="Sphere\Generated\i_memory.cs" />
     <Compile Include="Sphere\Generated\i_moongate_blue.cs" />
     <Compile Include="Sphere\Generated\i_rune_base.cs" />
     <Compile Include="Sphere\Generated\i_rune_marker.cs" />

@@ -8,6 +8,11 @@ namespace Server.Sphere.UOErebor
 {
     public class i_grave_stone_4 : SphereItem
     {
+	    public static void Initialize()
+        {
+            SphereSharpRuntime.Current.RegisterServUOType<i_grave_stone_4>("i_grave_stone_4");
+        }
+
         [Constructable]
         public i_grave_stone_4() : base(0x0EDB, "i_grave_stone_4")
         {
