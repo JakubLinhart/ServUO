@@ -48,6 +48,10 @@ namespace Server.Sphere
             throw new NotImplementedException();
         }
 
+        public IItem LastNew()
+        {
+            throw new NotImplementedException();
+        }
 
         public int Parrying { get { return this.Skills[SkillName.Parry].Fixed; } set { this.Skills[SkillName.Parry].Base = value; } }
         public int Tactics { get { return this.Skills[SkillName.Tactics].Fixed; } set { this.Skills[SkillName.Tactics].Base = value; } }
